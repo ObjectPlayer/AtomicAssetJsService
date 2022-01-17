@@ -1,0 +1,22 @@
+{
+  "name": "eosio-based-contracts-service",
+  "version": "1.0.0",
+  "description": "eos-blockchain-intraction-service",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ObjectPlayer/eosio-based-contracts-service-js.git"
+  },
+  "author": "ObjectPlayer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ObjectPlayer/eosio-based-contracts-service-js/issues"
+  },
+  "homepage": "https://github.com/ObjectPlayer/eosio-based-contracts-service-js#readme",
+  "dependencies": {
+    "eosjs": "^22.1.0"
+  }
+}
