@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "eos-blockchain-intraction-service",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/ObjectPlayer/eosio-based-contracts-service-js#readme",
   "dependencies": {
     "eosjs": "^22.1.0"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7"
   }
 }
