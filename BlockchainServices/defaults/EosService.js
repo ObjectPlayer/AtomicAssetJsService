@@ -1,7 +1,8 @@
 import { Api, JsonRpc, RpcError } from "eosjs";
 import { JsSignatureProvider } from "eosjs/dist/eosjs-jssig";
 const chainId = process.env.APP_CHAINID;
-const signatureProvider = new JsSignatureProvider([]);
+const signatureProvider = new JsSignatureProvider([process.env.APP_PrivateKey]);
+
 const rpcUrl =
     process.env.APP_NETWORK_PROTOCOL +
     "://" +
@@ -9,6 +10,7 @@ const rpcUrl =
     ":" +
     process.env.APP_NETWORK_PORT;
 const rpc = new JsonRpc(rpcUrl, { fetch });
+const api = new Api({ rpc, signatureProvider });
 
 export default class EosDefaultMethodService {
 
@@ -42,7 +44,7 @@ export default class EosDefaultMethodService {
         };
 
         try {
-            const result = await this.api.transact(trx, {
+            const result = await api.transact(trx, {
                 blocksBehind: 3,
                 expireSeconds: 30,
             });
@@ -59,7 +61,7 @@ export default class EosDefaultMethodService {
 
         return res;
     };
-    
+
     getTransactionDetails = async (trxId) => {
         let res = null;
         try {
