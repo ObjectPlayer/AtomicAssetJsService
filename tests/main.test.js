@@ -1,6 +1,6 @@
 import EosioTokenContract from "../BlockchainServices/contracts/EosioTokenContract";
 import EosDefaultMethodService from "../BlockchainServices/defaults/EosService";
-import { ACCOUNT_NAME_1, ACCOUNT_NAME_2, AMOUNT, MEMO, TRANSACTION_ID } from "../BlockchainServices/constants"
+import { ACCOUNT_NAME_1, ACCOUNT_NAME_2, AMOUNT, MEMO, TRANSACTION_ID } from "./assets/constants"
 
 jest.setTimeout(1000000);
 
