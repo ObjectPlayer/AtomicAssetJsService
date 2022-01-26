@@ -6,7 +6,7 @@ const AMOUNT = "1.00000000 WAX"
 const MEMO = "testing"
 
 
-export default {
+export {
     ACCOUNT_NAME_1,
     ACCOUNT_NAME_2,
     TRANSACTION_ID,
