@@ -1,7 +1,7 @@
 import { Api, JsonRpc, RpcError } from "eosjs";
 import { JsSignatureProvider } from "eosjs/dist/eosjs-jssig";
 const chainId = process.env.APP_CHAINID;
-const signatureProvider = new JsSignatureProvider([process.env.APP_PrivateKey]);
+const signatureProvider = new JsSignatureProvider([process.env.APP_PRIVATE_KEY]);
 
 const rpcUrl =
     process.env.APP_NETWORK_PROTOCOL +
@@ -11,6 +11,8 @@ const rpcUrl =
     process.env.APP_NETWORK_PORT;
 const rpc = new JsonRpc(rpcUrl, { fetch });
 const api = new Api({ rpc, signatureProvider });
+
+const tokenSymbol = process.env.APP_TOKEN_SYMBOL
 
 export default class EosDefaultMethodService {
 
@@ -25,7 +27,7 @@ export default class EosDefaultMethodService {
     };
 
     getUserBalance = async (userName) => {
-        var res = await rpc.get_currency_balance(
+        var res: any = await rpc.get_currency_balance(
             "eosio.token",
             userName,
             tokenSymbol
@@ -38,7 +40,7 @@ export default class EosDefaultMethodService {
     };
 
     defaultPushAction = async (trx) => {
-        let res = {
+        let res: any = {
             success: false,
             message: "",
         };

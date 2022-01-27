@@ -35,7 +35,7 @@ describe("Testing Wax Blockchain Service", () => {
         const quantity = AMOUNT;
         const memo = MEMO
 
-        const transferAction = eosioTokenContract.eosioTokenContract(from, to, quantity, memo)
+        const transferAction = eosioTokenContract.transferToken(from, to, quantity, memo)
         let res = await blockchainService.defaultPushAction(transferAction);
         expect(res).not.toBe(null);
     })
