@@ -1,7 +1,8 @@
 import { Api, JsonRpc, RpcError } from "eosjs";
 import { JsSignatureProvider } from "eosjs/dist/eosjs-jssig";
 const chainId = process.env.APP_CHAINID;
-const signatureProvider = new JsSignatureProvider([process.env.APP_PRIVATE_KEY]);
+const privateKey = process.env.APP_PRIVATE_KEY;
+const signatureProvider = new JsSignatureProvider([privateKey]);
 
 const rpcUrl =
     process.env.APP_NETWORK_PROTOCOL +
