@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/ObjectPlayer/eosio-based-contracts-service-js#readme",
   "dependencies": {
-    "eosjs": "^22.1.0"
+    "eosjs": "^22.1.0",
+    "node-fetch": "^3.2.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",
